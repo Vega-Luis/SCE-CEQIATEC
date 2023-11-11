@@ -3,7 +3,7 @@ const mssql = require('mssql');
 const dbSettings ={
     user:'sce',
     password:'sce1234',
-    server:'192.168.0.13',
+    server:'192.168.0.17',
     database:'SCE-CEQIATEC',
     trustServerCertificate: true,
     options: {
