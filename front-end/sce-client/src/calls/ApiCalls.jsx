@@ -10,6 +10,14 @@ export const getEquipmentList = (type, location, responsible) => {
     });
 }
 
+export const getEquipment = (id) => { 
+    return  axiosClient.get('/equipment', {
+        params: {
+            "id":id
+        }
+    });
+}
+
 export const getUserList = () => {
     return axiosClient.get('/users');
 }
