@@ -1,9 +1,18 @@
 const { Router } = require('express');
 const router = Router();
-const brands = require('../controllers/brands');
+const equipments = require('../controllers/equipments');
+const catalogs = require('../controllers/catalogs');
+const users = require('../controllers/users');
 
-// Equipment brands endpoint
-router.get('/brands', brands.getEquipmentBrands);
-router.get('/equipments', brands.getEquipmentList);
-router.get('/users', brands.getUserList);
+// Catalogs endpoints 
+router.get('/brands', catalogs.getEquipmentBrands);
+router.get('/locations', catalogs.getLocaations);
+router.get('/types', catalogs.getEquipmentTypes);
+
+// Equipments endpoint
+router.get('/equipments', equipments.getEquipmentList);
+router.post('/create-equipment', equipments.createEquipment);
+// Users endpoint
+router.get('/users', users.getUserList);
+
 module.exports = router;
