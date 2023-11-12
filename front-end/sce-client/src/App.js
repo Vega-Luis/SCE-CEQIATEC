@@ -1,5 +1,6 @@
 
 import { Routes, Route } from 'react-router-dom';
+import CreateEquipment from './pages/CreateEquipment';
 import Home from './pages/Home';
 import EquipmentMagement from './pages/EquipmentManagement';
 import UserManagement from './pages/UserManagement';
@@ -12,6 +13,7 @@ function App() {
         <Route path="/home" element={ <Home />} />
         <Route path="/equipments" element={ <EquipmentMagement/>} />
         <Route path="/users" element={ <UserManagement/>} />
+        <Route path="/create-equipment" element={ <CreateEquipment/>} />
       </Routes>
 
     </div>
