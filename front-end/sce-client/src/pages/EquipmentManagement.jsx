@@ -13,7 +13,10 @@ import Row from "react-bootstrap/Row";
 import OptionsBar from "../components/OptionsBar";
 import { useEffect, useState } from "react";
 import Table from 'react-bootstrap/Table';
+import { useNavigate } from 'react-router-dom';
+
 function EquipmentMagement() {
+  const navigate = useNavigate();
     const [equipmentList, setEquipmentList] = useState([]);
   
     useEffect(() => {
@@ -51,7 +54,10 @@ function EquipmentMagement() {
             <Image src={ImgDelete} />
               </Button>
             <Button
-            variant="outline-ligth">
+            variant="outline-ligth"
+            onClick={() => {
+              navigate('/create-equipment');
+            }}>
             <Image src={ImgCreate} />
               </Button>
             </Col>
