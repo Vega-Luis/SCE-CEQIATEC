@@ -50,3 +50,18 @@ module.exports.createEquipment = async(req, res) => {
         res.status(500).send(error.message);
     }
 }
+
+module.exports.getEquipment = async(req, res) =>  {
+    console.log(req.query);
+    try {
+        const pool = await getDBConnection();
+        const result = await pool
+            .request()
+            .input('InId', req.query.id) 
+            .execute('dbo.GetEquipment');
+        res.json(result.recordset);
+    } catch(error) {
+        console.log(error);
+        res.status(500).send(error.message);
+    }
+}

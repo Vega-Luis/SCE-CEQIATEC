@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 function EquipmentMagement() {
   const navigate = useNavigate();
     const [equipmentList, setEquipmentList] = useState([]);
+    const [selectedEquipmentId, setSelectedEquipmentId] = useState(null);
   
     useEffect(() => {
       getEquipmentList( "", "", "")
@@ -29,6 +30,10 @@ function EquipmentMagement() {
           console.log(error);
         })
     }, []);
+
+    const handleCheckboxChange = (equipmentId) => {
+      setSelectedEquipmentId(equipmentId === selectedEquipmentId ? null : equipmentId);
+    }
 
     return (
     <Container fluid style={ {height: '1080px'}}>
@@ -45,6 +50,7 @@ function EquipmentMagement() {
             </Col>
             <Col xs={3}>
             <Button
+            onClick={()=> {if (selectedEquipmentId !== null) {navigate(`/details/${selectedEquipmentId}`)}}}
             variant="outline-ligth">
             <Image src={ImgDetails} />
 
@@ -78,6 +84,9 @@ function EquipmentMagement() {
                             return(
                                 <tr key={index}>
                                     <td> <Form.Check
+                                    checked={equipment.Id === selectedEquipmentId}
+                                    onChange={() => {handleCheckboxChange(equipment.Id)}}
+                            
                                         label={equipment.Id}/></td>
                                     <td>{equipment.Type}</td>
                                     <td>{equipment.Location}</td>
