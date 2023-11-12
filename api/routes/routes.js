@@ -12,6 +12,7 @@ router.get('/types', catalogs.getEquipmentTypes);
 // Equipments endpoint
 router.get('/equipments', equipments.getEquipmentList);
 router.post('/create-equipment', equipments.createEquipment);
+router.get('/equipment', equipments.getEquipment);
 // Users endpoint
 router.get('/users', users.getUserList);
 
