@@ -31,15 +31,19 @@ function UserManagement() {
     <Container fluid style={ {height: '1080px'}}>
       <Row style={ {height: '100%'}}>
         <Col xs={3}>
-          <Aside />
+          <Aside btnUsersChecked={true} btnEquipmentsChecked={false}/>
         </Col>
         <Col>
           <OptionsBar />
+          <Container>
           <Row>
+            <Col></Col>
+            <Col xs={1}>
             <Button
             variant="outline-ligth">
             <Image src={ImgCreate} />
             </Button>
+            </Col>
           </Row>
           <Row>
             <Table hover>
@@ -66,6 +70,7 @@ function UserManagement() {
                 </tbody>
             </Table>
           </Row>
+          </Container>
         </Col>
       </Row>
     </Container>
