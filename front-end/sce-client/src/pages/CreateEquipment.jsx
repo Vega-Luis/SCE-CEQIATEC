@@ -366,10 +366,12 @@ function CreateEquipment() {
                 <Row></Row>
             </Form>
         </Container>
-            <Container className="py-5"> 
+            <Container className="py-5 justify-content-center d-flex"> 
                 <Button size="lg" variant="secondary"
+                style={{marginRight: '20%'}}
                 onClick={() => {navigate('/equipments')}}>Cancelar</Button>
                 <Button size="lg" variant="success"
+                    style={{marginLeft: '20%'}}
                     onClick={handleCreateEquipment}>Aceptar</Button>
             </Container>
 </Container>

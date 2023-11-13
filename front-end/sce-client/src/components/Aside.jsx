@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from 'react';
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -8,8 +9,10 @@ import ImgInfo from "../images/inf-icon.png";
 import ImgPerson from "../images/person-icon.png";
 import Row from "react-bootstrap/Row";
 import Stack from "react-bootstrap/Stack";
+import { useNavigate } from 'react-router-dom';
 
-function Aside() {
+function Aside( {btnUsersChecked, btnEquipmentsChecked}) {
+  const navigate = useNavigate();
   return (
     <Container
       style={{ backgroundColor: "#2EB394", height: "100%", padding: "13%" }}
@@ -26,14 +29,34 @@ function Aside() {
           </Stack>
         </Col>
       </Row>
-      <Stack gap={3}>
-        <Button size="lg">
+      <Stack gap={4} style={{marginTop: '97%'}}>
+        <Button size="lg"
+          active={btnEquipmentsChecked}
+          onClick={()=> {
+            navigate('/equipments')
+          }}>
+            <Row>
+              <Col xs={1}>
           <Image src={ImgInfo} />
+              </Col>
+<Col>
           Equipos
+</Col>
+            </Row>
         </Button>
-        <Button size="lg">
+        <Button size="lg"
+        active={btnUsersChecked}
+        onClick={() => { 
+          navigate('/users')}}>
+            <Row>
+              <Col xs={1}>
           <Image src={ImgPerson} />
+              </Col>
+              <Col>
           Gestion de Usuarios
+              </Col>
+
+            </Row>
         </Button>
       </Stack>
     </Container>
