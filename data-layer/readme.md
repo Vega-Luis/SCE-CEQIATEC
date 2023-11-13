@@ -1,1 +1,1 @@
-aquí va todo lo de la bd
+aquí va todo lo de la bd queda pendiente diagram
